@@ -1,0 +1,132 @@
+/* =========================================================================
+   <VotesBar /> — the thumbs-up / thumbs-down rating bar inside a game card.
+   Styles moved out of game.css so the bar owns its own markup + rules.
+   Source: roblox.com 2016 stylesheet (page___2610776205d2e30fed8e6b0a8be73680_m.css)
+   ========================================================================= */
+
+.rbx-votes {
+  display: block;
+  width: 100%;
+  padding-left: 1px;
+  margin-top: 5px;
+}
+
+.vote-bar {
+  position: relative;
+  height: 16px;
+}
+
+.thumbs-up {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.thumbs-down {
+  position: absolute;
+  top: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0.6;
+}
+
+.rbx-icon-thumbs-up,
+.rbx-icon-thumbs-down {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url(https://static.rbxcdn.com/images/Icons/thumbs.svg);
+  background-repeat: no-repeat;
+  background-size: auto auto;
+}
+
+.thumbs-up .rbx-icon-thumbs-up {
+  width: 12px;
+  height: 12px;
+  background-position: 0 0;
+  background-size: 24px auto;
+}
+
+.thumbs-down .rbx-icon-thumbs-down {
+  width: 12px;
+  height: 12px;
+  background-position: 0 -12px;
+  background-size: 24px auto;
+}
+
+/* the track: .background = empty base, .votes = filled part (width comes
+   from the percent prop, see votesbar.jsx), .mask .segment = the white
+   tick marks across it */
+.voting-container {
+  position: relative;
+  width: 60px;
+  height: 4px;
+  top: 8px;
+  margin: auto;
+  margin-left: 12px;
+}
+
+.voting-container .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+}
+
+.voting-container .votes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #757575;
+}
+
+.voting-container .mask .segment {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 8px;
+  background-color: white;
+}
+
+.voting-container .mask .seg-one   { left: 10.8px; }
+.voting-container .mask .seg-two   { left: 22.8px; }
+.voting-container .mask .seg-three { left: 34.8px; }
+.voting-container .mask .seg-four  { left: 46.8px; }
+
+/* ---- the 2016 breakpoint: cards get a bit more room -------------------- */
+@media (min-width: 480px) {
+  .rbx-votes {
+    margin-top: 9px;
+  }
+
+  .thumbs-up .rbx-icon-thumbs-up {
+    width: 16px;
+    height: 16px;
+    background-position: 0 0;
+    background-size: 32px auto;
+  }
+
+  .thumbs-down .rbx-icon-thumbs-down {
+    width: 16px;
+    height: 16px;
+    background-position: 0 -16px;
+    background-size: 32px auto;
+  }
+
+  .voting-container {
+    width: 100px;
+    height: 6px;
+    top: 4px;
+    margin-left: auto;
+  }
+
+  .voting-container .mask .segment { height: 16px; }
+
+  .voting-container .mask .seg-one   { left: 18px; }
+  .voting-container .mask .seg-two   { left: 38px; }
+  .voting-container .mask .seg-three { left: 58px; }
+  .voting-container .mask .seg-four  { left: 78px; }
+}

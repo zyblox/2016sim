@@ -1,0 +1,62 @@
+/* =========================================================================
+   A single game card — everything <Game /> in game.jsx renders lives here,
+   except the rating bar, which is its own component (votesbar.css).
+   The grid that lays the cards out is in gameslist.css.
+   Source: roblox.com 2016 stylesheet (page___2610776205d2e30fed8e6b0a8be73680_m.css)
+   ========================================================================= */
+
+/* ---- card shell ------------------------------------------------------- */
+/* width:100% of the 166px cell minus its 0 4px padding => a 158px box with
+   146px of content after the 6px side padding. */
+.game-item {
+  position: relative;
+  float: left;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  padding: 9px 6px 6px 6px;
+  margin: 0 auto;
+  text-align: left;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(150, 150, 150, 0.74);
+  border-radius: 3px;
+}
+
+.card-item-link {
+  display: block;
+  color: #191919;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+/* Roblox pins the thumb to a 140x140 box with a 3px inset on the left
+   (.game-thumb-content / .game-thumb-wrapper) instead of letting the image
+   set its own size. */
+.gameicon {
+  display: block;
+  width: 140px;
+  height: 140px;
+  margin-left: 3px;
+  object-fit: cover;
+}
+
+.gametext {
+  display: inline-block;
+  width: calc(100% - 4px);
+  margin: 1px 3px 0 3px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.2em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rbx-game-text-notes {
+  display: block;
+  line-height: 1em;
+  margin: 1px 3px;
+  color: #757575;
+  font-size: 12px;
+  white-space: nowrap;
+}

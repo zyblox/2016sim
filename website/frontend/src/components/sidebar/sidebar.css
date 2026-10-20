@@ -1,0 +1,81 @@
+#sidebar {
+    background-color: white;
+    position: fixed;
+    top: 40px;
+    left: 0;
+    width: 150px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    box-shadow: 4px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+#sideseperator {
+    border: none;
+    height: 1px;
+    background-color: lightgray ;
+}
+
+.name {
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+#sidebuttons {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0;
+    margin-top: 10px;
+    padding-bottom: 5px;
+}
+
+.sidebutton {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    height: 30px;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 4px;
+    font-size: medium;
+}
+
+.sidebutton:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.sideli {
+    margin-bottom: 5px;
+}
+
+.sideliicon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+#Upgrade {
+    background-color: #00a3ff;
+    height: 40px;
+    color: white;
+    border-radius: 5px;
+    border:  transparent;
+    font-size: large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+#Upgrade:hover {
+    background-color: #008ad1;
+}

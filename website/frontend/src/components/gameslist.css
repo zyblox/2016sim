@@ -1,0 +1,59 @@
+/* The card cell. 2016 values (>=480px): the li is 166px *including* its
+   4px side padding, so the white box inside is 158px wide. box-sizing is
+   border-box here because leanbase sets it globally on *, which this
+   project does not. */
+.games .game {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+  box-sizing: border-box;
+  width: 166px;
+  height: 221px;
+  padding: 0 4px;
+  margin-bottom: 12px;
+}
+
+/* Cards are inline-block on a single nowrap line: they never wrap, the row
+   just runs past the right edge and gets clipped there — the same thing
+   Roblox's .games-list-container{overflow:hidden} did (minus the arrow
+   scroller). display:block also means the list contains its own cards, so
+   no clearfix or flex wrapper is needed. */
+.hlist.games {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* ---- home page rows (one per Roblox "sort") --------------------------- */
+.games-section {
+  margin-bottom: 24px;
+}
+
+.games-section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.games-section-info {
+  font-size: 13px;
+  color: #757575;
+  margin-bottom: 10px;
+}
+
+.games .game {
+  animation: game-appear 0.3s ease-out both;
+}
+
+@keyframes game-appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
